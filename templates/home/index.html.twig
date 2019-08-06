@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Bienvenue sur MoiJV !</h1>
+    <p>MoiJV est un site collaboratif de prêt de jeux vidéos.</p>
+    <h2>Nos produits</h2>
+        <ul>
+            {% for product in products %}
+                <li><a href="{{ path('product', { 'id' : product.id }) }}">{{ product.name }}</a></li>
+            {% endfor %}
+        </ul>
+</div>
+{% endblock %}
